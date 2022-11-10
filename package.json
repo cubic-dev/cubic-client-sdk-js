@@ -1,0 +1,19 @@
+{
+  "name": "cubic-client",
+  "version": "1.0.0",
+  "description": "cubic js client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubic-dev/cubic-client-sdk-js.git"
+  },
+  "author": "cubic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cubic-dev/cubic-client-sdk-js/issues"
+  },
+  "homepage": "https://github.com/cubic-dev/cubic-client-sdk-js#readme"
+}
