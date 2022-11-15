@@ -1,17 +1,20 @@
 import createAxiosClient from "../base";
-import CubicApiClient from "../base";
 
 export default class PassportClient {
     constructor(apiToken) {
         this.axios = createAxiosClient(apiToken)
     }
 
-    UserRegister() {
-        this.axios.post(
-            url = "/register",
-            data = {
-
-            }
-        )
+    UserRegister(account, onSuccess, OnFailed) {
+        var call = this.axios({
+            method: "post",
+            url: "/register", 
+            data: account
+        })
+        call.then((resp) => {
+            onSuccess(resp)
+        }).catch((resp) => {
+            OnFailed(resp)
+        }) 
     }
 }
