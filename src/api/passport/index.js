@@ -5,16 +5,27 @@ export default class PassportClient {
         this.axios = createAxiosClient(apiToken)
     }
 
-    UserRegister(account, onSuccess, OnFailed) {
-        var call = this.axios({
+    UserRegister(account, onSuccess, onFailed) {
+        this.axios({
             method: "post",
             url: "/register", 
             data: account
-        })
-        call.then((resp) => {
+        }).then((resp) => {
             onSuccess(resp)
         }).catch((resp) => {
-            OnFailed(resp)
+            onFailed(resp)
         }) 
+    }
+
+    UserLogin(account, onSuccess, onFailed) {
+        this.axios({
+            method: "post",
+            url: "/login",
+            data: account
+        }).then((resp) => {
+            onSuccess(resp)
+        }).catch((resp) => {
+            onFailed(resp)
+        })
     }
 }
